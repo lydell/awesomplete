@@ -223,7 +223,6 @@ _.prototype = {
 				.filter(function(item) {
 					return me.filter(item, value);
 				})
-				.sort(this.sort)
 				.every(function(text, i) {
 					me.ul.appendChild(me.item(text, value));
 
