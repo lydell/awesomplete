@@ -219,11 +219,16 @@ _.prototype = {
 			// Populate list with options that match
 			this.ul.innerHTML = "";
 
-			this._list
+			var filtered = this._list
 				.filter(function(item) {
 					return me.filter(item, value);
 				})
-				.sort(this.sort)
+
+			var sorted = this.sort.length === 1
+				? this.sort(filtered)
+				: filtered.sort(this.sort);
+
+			sorted
 				.every(function(text, i) {
 					me.ul.appendChild(me.item(text, value));
 
