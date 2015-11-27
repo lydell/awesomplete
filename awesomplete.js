@@ -229,8 +229,8 @@ _.prototype = {
 				: filtered.sort(this.sort);
 
 			sorted
-				.every(function(text, i) {
-					me.ul.appendChild(me.item(text, value));
+				.every(function(text, i, array) {
+					me.ul.appendChild(me.item(text, value, i, array));
 
 					return i < me.maxItems - 1;
 				});
