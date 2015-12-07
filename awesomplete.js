@@ -88,6 +88,8 @@ var _ = function (input, o) {
 	$.bind(this.ul, {"mousedown": function(evt) {
 		var li = evt.target;
 
+		if (evt.button === 2) return
+
 		if (li !== this) {
 
 			while (li && !/li/i.test(li.nodeName)) {
